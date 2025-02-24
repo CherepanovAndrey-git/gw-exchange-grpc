@@ -1,4 +1,5 @@
 module github.com/CherepanovAndrey-git/gw-exchange-grpc
+
 go 1.24.0
 
 require (
@@ -11,5 +12,4 @@ require (
 	golang.org/x/sys v0.30.0 // indirect
 	golang.org/x/text v0.22.0 // indirect
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20250212204824-5a70512c5d8b // indirect
-	google.golang.org/grpc/cmd/protoc-gen-go-grpc v1.5.1 // indirect
 )
