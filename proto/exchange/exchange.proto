@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package exchange;
+// clear path for exchange file
+option go_package = "github.com/CherepanovAndrey-git/gw-exchange-grpc/proto/exchange";
+
+
+service ExchangeService {
+  // Получение курсов обмена всех валют
+  rpc GetExchangeRates(Empty) returns (ExchangeRatesResponse);
+
+  // Получение курса обмена для конкретной валюты
+  rpc GetExchangeRateForCurrency(CurrencyRequest) returns (ExchangeRateResponse);
+}
+
+// Запрос для получения курса обмена для конкретной валюты
+message CurrencyRequest {
+  string from_currency = 1;
+  string to_currency = 2;
+}
+
+// Ответ с курсом обмена для конкретной валюты
+message ExchangeRateResponse {
+  string from_currency = 1;
+  string to_currency = 2;
+  float rate = 3;
+}
+
+message ExchangeRatesResponse {
+  map<string, float> rates = 1; // ключ: валюта, значение: курс
+}
+
+
+message Empty {}
