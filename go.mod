@@ -1,5 +1,4 @@
-module gw-exchanger
-
+module github.com/CherepanovAndrey-git/gw-exchange-grpc
 go 1.24.0
 
 require (
